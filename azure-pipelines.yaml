@@ -1,15 +1,12 @@
 ---
-pool:
-  vmImage: ubuntu-24.04
+pool: Default
+
 trigger:
 - main
-stages:
-- stage: buildstage
-  jobs:
-  - job: BuildJob
-    steps:
-    - task: Maven@4
-      inputs:
-        mavenPOMFile: pom.xml
-        jdkVersionOption: '1.17'
+
+steps:
+  - task: Maven@4
+    inputs:
+      mavenPOMFile: pom.xml
+        
         
